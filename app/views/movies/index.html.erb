@@ -1,11 +1,15 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
-
-<ul>
-  <% @movies.each do |movie|  %>
-    <li>
-      <strong><%= movie.title %></strong> (<%= movie.rating %>): 
-      <%= number_to_currency(movie.total_gross, precision: 0)  %>
-    </li>
-  <% end %>
-</ul>
+<% @movies.each do |movie| %>
+  <section class="movie">
+    <div class="summary">
+      <h2>
+        <%= movie.title %>
+      </h2>
+      <h3>
+        <%= total_gross(movie) %>
+      </h3>
+      <p>
+        <%= truncate(movie.description, length: 150, separator: ' ') %>
+      </p>
+    </div>
+  </section>
+<% end %>

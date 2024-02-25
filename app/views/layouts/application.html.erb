@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flix</title>
+    <title>Super Flix</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      <%= image_tag('logo.png') %>
+    </header>
+    <div class="content">
+      <%= yield %>
+    </div>
+    <footer>
+      <p>&copy; <%= Time.zone.now.year %>
+        <%= link_to "DitelDev It Solutions", "#" %>
+      </p>
+    </footer>
   </body>
 </html>
