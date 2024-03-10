@@ -12,11 +12,11 @@ class MoviesController < ApplicationController
   end
 
   def create
-    movie = Movie.new(movie_params)
-    if movie.save
-      redirect_to movies_path
+    @movie = Movie.new(movie_params)
+    if @movie.save
+      redirect_to @movie
     else
-      render new_movie_path
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -24,8 +24,11 @@ class MoviesController < ApplicationController
   end
 
   def update
-    @movie.update(movie_params)
-    redirect_to @movie
+    if @movie.update(movie_params)
+      redirect_to @movie
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
