@@ -7,6 +7,6 @@ class Review < ApplicationRecord
   validates :comment, length: {minimum: 4}
   validates :stars, inclusion: {
     in: STARS,
-    message: "must be between 1 and 5"
+    message: "Must be between 1 and 5"
   }
 end
