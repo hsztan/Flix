@@ -14,6 +14,7 @@
       <%= @movie.description %>
     </p>
     <table>
+      <%= link_to "Write Review", new_movie_review_path(@movie) %>
       <tr>
         <th>Total Gross:</th>
         <td><%= total_gross(@movie) %></td>

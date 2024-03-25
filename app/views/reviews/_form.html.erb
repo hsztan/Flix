@@ -1,0 +1,7 @@
+<%= form_with(model: [movie, review]) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, autofocus: true %>
+
+  <%= f.submit "Post Review" %>
+
+<% end %>

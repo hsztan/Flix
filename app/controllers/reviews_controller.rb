@@ -5,6 +5,10 @@ class ReviewsController < ApplicationController
     @reviews = @movie.reviews
   end
 
+  def new
+    @review = @movie.reviews.new
+  end
+
   private
 
   def set_movie
