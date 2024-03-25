@@ -14,7 +14,7 @@
       <%= @movie.description %>
     </p>
     <table>
-      <%= link_to "Write Review", new_movie_review_path(@movie) %>
+      <%# <%= link_to "Write Review", new_movie_review_path(@movie) %> %>
       <tr>
         <th>Total Gross:</th>
         <td><%= total_gross(@movie) %></td>
@@ -28,6 +28,9 @@
         <td><%= @movie.duration %></td>
       </tr>
     </table>
+  </div>
+  <div class="reviews">
+    <%= render "reviews/form", movie: @movie, review: @movie.reviews.new %>
   </div>
 </section>
 
